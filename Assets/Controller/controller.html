@@ -4,59 +4,166 @@
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <script type="text/javascript" src="https://www.airconsole.com/api/airconsole-1.8.0.js"></script>
     <style type=text/css>
-    /* the style sheet dictates what our elements (buttons, backgrounds etc.) will look like. */
-    #background {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-    }
+        /* the style sheet dictates what our elements (buttons, backgrounds etc.) will look like. */
+        #dpad {
+            position: absolute;
+            top: 5%;
+            width: 100%;
+            height: 90%;
+            border-radius: 100%;
+            background-color: black;
+            background: url(joystick.svg) no-repeat center center;
+            background-size: contain;
+        }
 
-    .button{
-        background: #3B3B3B;
-        font-size: 14px;
-        padding: 5px 10px 5px 10px;
-        border: solid #1f1f1f 2px;
-        height: 100%;
-        position: absolute;
-    }
+        .dpad-relative {
+            width: 100%;
+            height: 100%;
+        }
 
-    #left-button{
-        left: 0;
-        width: 25%;
-        height: 100%;
-    }
+        .dpad-joystick {
+            box-sizing: border-box;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 50%;
+            height: 0;
+            padding-bottom: 50%;
+            margin-left: -25%;
+            margin-top: -25%;
+            border-radius: 100%;
+            background-color: #000000;
+            border: 3px solid #ADDE00;
+        }
 
-    #right-button{
-        left: 25%;
-        width: 25%;
-        height: 100%;
-    }
+        .button-300-150 {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+        }
 
-    #down-button{
-        right: 0;
-        bottom: 0;
-        width: 50%;
-        height: 50%;
-    }
+        .button-300-150.button-active {
+            background-image: url('button-300-150-active.png');
+        }
 
-    #up-button{
-        right: 0;
-        top: 0;
-        width: 50%;
-        height: 50%;
-    }
+        .button-300-150.button-active .button-text {
+            color: black;
+        }
 
-    .button-text{
-        position: absolute;
-        color: white;
-        font-family: sans-serif;
-        text-align: center;
-        pointer-events: none;
-        width: 50%;
-        height: 20%;
-        left: 25%;
-        top: 40%;
-    }
+        .button-150-300 {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+        }
+
+        .button-150-300.button-active {
+            background-image: url('button-150-300-active.png');
+        }
+
+        .button-150-300.button-active .button-text {
+            color: black;
+        }
+
+        .button-300-300 {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+        }
+
+        .button-300-300.button-active {
+            background-image: url('button-300-300-active.png');
+        }
+
+        .button-300-300.button-active .button-text {
+            color: black;
+        }
+
+        .button-text {
+            width: 100%;
+            top: 50%;
+            margin-top: -0.5em;
+            position: absolute;
+            text-align: center;
+            color: white;
+        }
+
+        body {
+            -ms-user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+
+        #background {
+            position: relative;
+            background-color: #3b3b3b;
+            text-align: center;
+            font-family: sans-serif;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            max-width: 720px;
+            max-height: 360px;
+        }
+
+        #dpad {
+            position: absolute;
+            width: 40%;
+            height: 100%;
+            left: 0%;
+            top: 0%;
+        }
+
+        .button-300-150 {
+            position: absolute;
+            height: 50%;
+            width: 40%;
+            right: 0px;
+
+        }
+
+        #a {
+            top: 0%;
+            background-position: 50% 0%;
+        }
+
+        .button-a-text {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            padding-bottom: 50%;
+            height: 0%;
+        }
+
+        #b {
+            bottom: 0%;
+            background-position: 50% 100%;
+        }
+
+        .button-b-text {
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            width: 100%;
+            padding-bottom: 50%;
+            height: 0%;
+        }
+
+        #c {
+            top: 33%;
+            background-position: 50% 100%;
+        }
+
+        .button-c-text {
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            width: 100%;
+            padding-bottom: 50%;
+            height: 0%;
+        }
     </style>
     
     <script type="text/javascript">
@@ -570,17 +677,21 @@
     
     </head>
     <body onload="window.app = new App()">
-        <div id="background"></div>
-        <div id="dpad">
-            <div>
-                <div class="dpad-instructions">SWIPE<br>(Diagonal: on)</div>
-                <div class="dpad-arrow dpad-arrow-up"></div>
-                <div class="dpad-arrow dpad-arrow-down"></div>
-                <div class="dpad-arrow dpad-arrow-left"></div>
-                <div class="dpad-arrow dpad-arrow-right"></div>
+        <div id="background">
+            <div id="dpad">
+                <div class="dpad-relative">
+                    <div class="dpad-joystick">
+                        <div class="dpad-instructions">SWIPE<br>(Diagonal: on)</div>
+                        <div class="dpad-arrow dpad-arrow-up"></div>
+                        <div class="dpad-arrow dpad-arrow-down"></div>
+                        <div class="dpad-arrow dpad-arrow-left"></div>
+                        <div class="dpad-arrow dpad-arrow-right"></div>
+                    </div>
+                </div>
             </div>
+            <div id="a" class="button-300-150"><div class="button-a-text"><div class="button-text">Dash</div></div></div>
+            <div id="b" class="button-300-150"><div class="button-b-text"><div class="button-text">Attack</div></div></div>
+            <div id="c" class="button-300-150"><div class="button-c-text"><div class="button-text">Ability</div></div></div>
         </div>
-        <div id="a" class="button-300-150"><div class="button-a-text"><div class="button-text">A</div></div></div>
-        <div id="b" class="button-300-150"><div class="button-b-text"><div class="button-text">B</div></div></div>
     </body>
 </html>
