@@ -34,8 +34,6 @@ public class HomingMissile : MonoBehaviour
                 float distanceToPlayer = (player.transform.position - transform.position).sqrMagnitude;
 
                 if (distanceToPlayer < closestDistance) {
-                    //closestDistance = distanceToPlayer;
-                    
                     closestPlayer = player;
 
                 } else {

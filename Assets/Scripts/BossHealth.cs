@@ -17,13 +17,13 @@ public class BossHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(healthBar <= 50)
+        /*if(healthBar <= 50)
         {
             laser.SetActive(true);
         }
         else
         {
             laser.SetActive(false);
-        }
+        }*/
     }
 }
