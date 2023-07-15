@@ -391,6 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _anglesPerSecond: 45
+  initTarget: {fileID: 0}
 --- !u!1 &7664283428892116996
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,6 +402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7664283428892116999}
   - component: {fileID: 7664283428892116998}
+  - component: {fileID: 1506488732832112891}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -475,6 +477,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1506488732832112891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7664283428892116996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31195a9a7f9a94e40a7fc16bff1ef3c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8212837933622146885
 PrefabInstance:
   m_ObjectHideFlags: 0
