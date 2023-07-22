@@ -10,6 +10,8 @@ TagManager:
   - Laser
   - Body
   - Boss
+  - SpeedyAttack
+  - BeefyAttack
   layers:
   - Default
   - TransparentFX
