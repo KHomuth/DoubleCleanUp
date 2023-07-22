@@ -21,8 +21,10 @@ public class GameLogic : MonoBehaviour {
 
 	void OnConnect (int device){
         if (AirConsole.instance.GetActivePlayerDeviceIds.Count == 0) {
-			if (AirConsole.instance.GetControllerDeviceIds ().Count >= 2) {
-                AirConsole.instance.SetActivePlayers (2);
+			//change back to >=2
+			if (AirConsole.instance.GetControllerDeviceIds ().Count >= 1) {
+				//change back to 2
+                AirConsole.instance.SetActivePlayers(1);
                 List<int> connectedDevices = AirConsole.instance.GetControllerDeviceIds();
                 foreach (int deviceID in connectedDevices) {
                     int active_player = AirConsole.instance.ConvertDeviceIdToPlayerNumber(deviceID);
@@ -57,11 +59,9 @@ public class GameLogic : MonoBehaviour {
 	private void OnMessage (int device, JToken data){
 		//When I get a message, I check if it's from any of the devices stored in my device Id dictionary
 		int active_player = AirConsole.instance.ConvertDeviceIdToPlayerNumber(device);
-		if (players.ContainsKey(active_player) && data["dpad"]["directionchange"] != null) {
-            Debug.Log(data["dpad"]["directionchange"]);
-            
+		if (players.ContainsKey(active_player) && data != null) {
             //I forward the command to the relevant player script, assigned by device ID
-			players[active_player].ButtonInput(data["dpad"]["directionchange"]);
+			players[active_player].ButtonInput(data);
 		}
 	}
 

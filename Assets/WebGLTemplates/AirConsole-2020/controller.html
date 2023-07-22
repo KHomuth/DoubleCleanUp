@@ -118,13 +118,14 @@
 
         .button-300-150 {
             position: relative;
-            height: 30%;
+            height: 95%;
             right: 0px;
 
         }
 
         #a {
             background-position: 50% 0%;
+            width: 45%;
         }
 
         .button-a-text {
@@ -138,6 +139,7 @@
 
         #b {
             background-position: 50% 100%;
+            width: 45%;
         }
 
         .button-b-text {
@@ -151,6 +153,7 @@
 
         #c {
             background-position: 50% 100%;
+            width: 95%;
         }
 
         .button-c-text {
@@ -172,6 +175,16 @@
             top: 0%;
             align-items: stretch;
             justify-content: space-between;
+        }
+
+        .top-buttons{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .top-buttons,
+        .bottom-buttons{
+            height: 100%;
         }
     </style>
     
@@ -797,9 +810,13 @@
                 </div>
             </div>
             <div class="button-container">
-                <div id="a" class="button-300-150"><div class="button-a-text"><div class="button-text">Dash</div></div></div>
-                <div id="b" class="button-300-150"><div class="button-b-text"><div class="button-text">Attack</div></div></div>
-                <div id="c" class="button-300-150"><div class="button-c-text"><div class="button-text">Ability</div></div></div>
+                <div class="top-buttons">
+                    <div id="a" class="button-300-150"><div class="button-a-text"><div class="button-text">Dash</div></div></div>
+                    <div id="b" class="button-300-150"><div class="button-b-text"><div class="button-text">Ability</div></div></div>
+                </div>
+                <div class="bottom-buttons">
+                    <div id="c" class="button-300-150"><div class="button-c-text"><div class="button-text">Attack</div></div></div>
+                </div>
             </div>
         </div>
     </body>

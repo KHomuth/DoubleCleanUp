@@ -12,7 +12,9 @@ public class Laser : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {         
+    {
+        Debug.Log(initTarget.position);
+        Debug.Log(transform.position);
         bossHP = BossHealth.healthBar;
     }
 
@@ -31,10 +33,10 @@ public class Laser : MonoBehaviour
                 return;
             }
             //transform.localScale = new Vector3(hit.distance, transform.localScale.y, 1);
-            Debug.Log(hit.collider.gameObject.name);
+            //Debug.Log(hit.collider.gameObject.name);
             if (hit.collider.tag == "Player")
             {
-                Debug.Log("Damage dealt");
+                //Debug.Log("Damage dealt");
                 //Destroy(hit.collider.gameObject);
             }
         }

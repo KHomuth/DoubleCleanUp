@@ -9,10 +9,12 @@ public class HomingMissileHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HomingMissile missile = GameObject.FindGameObjectWithTag("LeftArm").GetComponent<HomingMissile>();
+        if(GameObject.FindGameObjectWithTag("LeftArm")) {
+            HomingMissile missile = GameObject.FindGameObjectWithTag("LeftArm").GetComponent<HomingMissile>();
 
-        if(missile != null) {
-            missile.FindClosestPlayer();
+            if(missile != null) {
+                missile.FindClosestPlayer();
+            }
         }
     }
 }
