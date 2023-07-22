@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossHealth : MonoBehaviour
 {
     public static float healthBar = 50f;
+    private bool isDamaged = false;
     //private GameObject laser;
 
 
@@ -38,5 +39,22 @@ public class BossHealth : MonoBehaviour
             //Debug.Log("Me deaderinoes");
         }
 
+    }
+    public void BossHit()
+    {
+        isDamaged = true;
+        //insert Boss get damaged animation (probably boss blinking red)
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider == GameObject.FindGameObjectWithTag("SpeedyAttack"))
+        {
+            healthBar -= 10f;
+        }
+        else if (collision.collider == GameObject.FindGameObjectWithTag("BeefyAttack"))
+        {
+            healthBar -= 15f;
+        }
     }
 }

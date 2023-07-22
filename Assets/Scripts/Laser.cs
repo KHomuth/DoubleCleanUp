@@ -9,15 +9,12 @@ public class Laser : MonoBehaviour
     public Transform initTarget;
     private float bossHP;
     public LayerMask layersToHit;
-    public GameObject bossBody;
 
     // Start is called before the first frame update
     void Start()
     {
-        //Debug.Log(initTarget.position);
-        //Debug.Log(transform.position);
-        
-        
+        Debug.Log(initTarget.position);
+        Debug.Log(transform.position);
         bossHP = BossHealth.healthBar;
     }
 
