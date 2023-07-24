@@ -26,7 +26,7 @@ public class Rotate : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(delayTime);
+        //Debug.Log(delayTime);
         if (bosshealth <= 50f)
         {
             delayTime = delayTime - Time.deltaTime;

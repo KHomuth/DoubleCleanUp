@@ -51,6 +51,7 @@ public class BossHealth : MonoBehaviour
         if(collision.collider == GameObject.FindGameObjectWithTag("SpeedyAttack"))
         {
             healthBar -= 10f;
+            Debug.Log(healthBar);
         }
         else if (collision.collider == GameObject.FindGameObjectWithTag("BeefyAttack"))
         {

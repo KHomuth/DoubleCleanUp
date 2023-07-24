@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class HomingMissile : MonoBehaviour
 {
+    [SerializeField]
+    private float _damageAmount;
 
     public float speed = 5f;
 
@@ -63,5 +65,15 @@ public class HomingMissile : MonoBehaviour
     void resetPosition() {
         transform.position = startPos;
         transform.rotation = startRot;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            var healthController = collision.gameObject.GetComponent<HealthController>();
+            healthController.TakeDamage(_damageAmount);
+            resetPosition();
+        }
     }
 }
