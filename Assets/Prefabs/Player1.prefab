@@ -209,6 +209,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 0.1
+  currentFireRate: 0
+  rigidBody: {fileID: 5577224989792449268}
+  tr: {fileID: 9135029205519624351}
+  projectile: {fileID: 8239167006183455112, guid: a00fa2f3e4f8c024aa96c69024091fe0, type: 3}
+  launchOffset: {fileID: 0}
 --- !u!96 &9135029205519624351
 TrailRenderer:
   serializedVersion: 3
