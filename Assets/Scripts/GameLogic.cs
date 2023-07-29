@@ -58,7 +58,7 @@ public class GameLogic : MonoBehaviour {
 		//When I get a message, I check if it's from any of the devices stored in my device Id dictionary
 		int active_player = AirConsole.instance.ConvertDeviceIdToPlayerNumber(device);
 		if (players.ContainsKey(active_player) && data["dpad"]["directionchange"] != null) {
-            Debug.Log(data["dpad"]["directionchange"]);
+            //Debug.Log(data["dpad"]["directionchange"]);
             
             //I forward the command to the relevant player script, assigned by device ID
 			players[active_player].ButtonInput(data["dpad"]["directionchange"]);

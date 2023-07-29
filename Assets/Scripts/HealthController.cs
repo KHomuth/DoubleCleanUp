@@ -19,6 +19,13 @@ public class HealthController : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        Debug.Log(_currentHealth);
+        Debug.Log(_maximumHealth);
+        Debug.Log(RemainingHealthPercentage);
+    }
+
     public UnityEvent OnDied;
 
     public UnityEvent OnHealthChanged;
