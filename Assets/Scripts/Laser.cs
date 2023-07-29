@@ -11,12 +11,8 @@ public class Laser : MonoBehaviour
     public LayerMask layersToHit;
 
     // Start is called before the first frame update
-    void Start()
-<<<<<<< Updated upstream
-    {         
-=======
+    void Start()       
     {
->>>>>>> Stashed changes
         bossHP = BossHealth.healthBar;
     }
 
