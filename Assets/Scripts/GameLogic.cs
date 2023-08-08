@@ -44,16 +44,20 @@ public class GameLogic : MonoBehaviour {
 
         if (deviceID == 0) {
             GameObject newPlayer = Instantiate (playerOnePrefab, new Vector2(transform.position.x, transform.position.y), transform.rotation) as GameObject;
+			newPlayer.transform.position = transform.position;
 			players.Add(deviceID, newPlayer.GetComponent<Player>());
         } else if (deviceID == 1) {
             GameObject newPlayer = Instantiate (playerTwoPrefab, new Vector2(transform.position.x, transform.position.y), transform.rotation) as GameObject;
+			newPlayer.transform.position = transform.position;
 			players.Add(deviceID, newPlayer.GetComponent<Player>());
         }
 	}
 
 	private void AddBoss() {
 		GameObject boss = Instantiate (bossPrefab, new Vector2(transform.position.x, transform.position.y), transform.rotation) as GameObject;
+		boss.transform.position = transform.position;
 		GameObject missile = Instantiate (missilePrefab, new Vector2(transform.position.x, transform.position.y), transform.rotation) as GameObject;
+		missile.transform.position = transform.position;
 	}
 
 	private void OnMessage (int device, JToken data){
